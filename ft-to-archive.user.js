@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         FT → archive.today
-// @namespace    https://github.com/local/simon-kuper-rss
-// @version      1.0.0
-// @description  Send ft.com article links to their archive.today snapshot (read past the paywall). Personal use.
+// @namespace    https://github.com/claudiorrrr/ft-to-archive-userscript
+// @version      1.1.0
+// @description  Send any ft.com article link to its archive.today snapshot (read past the paywall). Personal use.
 // @author       claudiorrrr
 // @downloadURL  https://raw.githubusercontent.com/claudiorrrr/ft-to-archive-userscript/main/ft-to-archive.user.js
 // @updateURL    https://raw.githubusercontent.com/claudiorrrr/ft-to-archive-userscript/main/ft-to-archive.user.js
@@ -18,7 +18,7 @@
   "use strict";
 
   var ARCHIVE = "https://archive.fo"; // mirror: .ph / .today / .li / .md / .is all work
-  var FT_ARTICLE = /^https?:\/\/(www\.)?ft\.com\/content\/[0-9a-f-]+/i;
+  var FT_ARTICLE = /^https?:\/\/(www\.)?ft\.com\/content\/[^/?#]+/i;
 
   function toArchive(url) {
     return ARCHIVE + "/newest/" + url;
